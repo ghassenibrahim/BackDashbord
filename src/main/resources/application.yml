@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /finance
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 300MB
+      max-request-size: 300MB
+  application:
+    name: finance
+  profiles:
+    active: dev
+
+#  thymeleaf:
+#    prefix: classpath:/templates/
+#    suffix: .html

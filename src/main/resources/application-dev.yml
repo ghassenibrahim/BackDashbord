@@ -1,0 +1,58 @@
+spring:
+  profiles:
+    active: dev
+  #Jackson
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  # Database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/alphacloud
+    username: acadmin
+    password: ac-admin!12345
+  # JPA properties
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        default_schema: public
+        format_sql: true
+        temp.use_jdbc_metadata_defaults: false
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  # Flyway
+  flyway:
+    enabled: true
+    locations:
+      - classpath:/db/migration
+
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: samozatestiranje321@gmail.com
+    password: samozatestiranje
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
+
+#JWT
+jwt:
+  secret: financeAlphaCloud!(562367213517?ALPHA
+  expirationInMinutes: 150
+  issuer: Alpha-cloud
+#  allowedOrigin: 'http://localhost:4200'
+
+

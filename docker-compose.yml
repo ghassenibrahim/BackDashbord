@@ -1,0 +1,16 @@
+version: '3'
+services:
+  # PostgresSQL Database
+  postgres:
+    container_name: postgres
+    restart: always
+    image: postgres
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_DB: finance
+      POSTGRES_USER: acadmin
+      POSTGRES_PASSWORD: ac-admin!12345
+    volumes:
+      - /home/postgres_bckp:/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
